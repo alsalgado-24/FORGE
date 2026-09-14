@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>WELL - Wireframe</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9e9e9;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .browser {
+    width: 900px;
+    background: #fff;
+    border: 1px solid #999;
+  }
+
+  /* Barra de navegador falsa */
+  .browser-tab {
+    background: #d9d9d9;
+    border-bottom: 1px solid #999;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #333;
+    width: 140px;
+  }
+  .browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #999;
+  }
+  .browser-bar .icon {
+    width: 22px;
+    height: 22px;
+    border: 1px solid #999;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #555;
+  }
+  .browser-bar .url {
+    flex: 1;
+    border: 1px solid #999;
+    border-radius: 14px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: #555;
+  }
+
+  /* Encabezado */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    border-bottom: 1px solid #333;
+  }
+  header h1 {
+    font-size: 28px;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #222;
+  }
+  .avatar-box {
+    width: 46px;
+    height: 46px;
+    border: 1px solid #333;
+    position: relative;
+  }
+  .avatar-box::before,
+  .avatar-box::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-top: 1px solid #333;
+  }
+  .avatar-box::before { transform-origin: center; transform: rotate(35deg); }
+  .avatar-box::after { transform-origin: center; transform: rotate(-35deg); }
+
+  /* Layout principal */
+  .main {
+    display: flex;
+  }
+
+  nav.sidebar {
+    width: 150px;
+    border-right: 1px solid #333;
+    padding: 20px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  nav.sidebar button {
+    font-family: inherit;
+    font-size: 11px;
+    padding: 8px 6px;
+    border: 1px solid #333;
+    border-radius: 14px;
+    background: #fff;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.3;
+  }
+  nav.sidebar button:hover { background: #f2f2f2; }
+
+  .content {
+    flex: 1;
+    padding: 24px;
+  }
+
+  /* Diagrama de araña */
+  .diagram-box {
+    border: 1px solid #333;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .diagram-box svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .diagram-box span {
+    position: relative;
+    color: #b8860b;
+    font-size: 12px;
+    background: #fff;
+    padding: 0 6px;
+  }
+
+  /* Listas inferiores */
+  .lists {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .list-panel {
+    flex: 1;
+  }
+  .list-panel h2 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #222;
+  }
+  .list-panel .box {
+    border: 1px solid #333;
+    height: 240px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #1a56db;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .list-panel .box .ver-mas {
+    margin-top: auto;
+  }
+  .list-panel .box .dots {
+    color: #1a56db;
+  }
+</style>
+</head>
+<body>
+
+<div class="browser">
+  <div class="browser-tab">A Web Page</div>
+  <div class="browser-bar">
+    <span class="icon">&larr;</span>
+    <span class="icon">&rarr;</span>
+    <span class="icon">&#8635;</span>
+    <div class="url">https://</div>
+  </div>
+
+  <header>
+    <h1>WELL</h1>
+    <div class="avatar-box"></div>
+  </header>
+
+  <div class="main">
+    <nav class="sidebar">
+      <button>Actividades Well</button>
+      <button>Agregar nuevas actividades</button>
+      <button>Ver listado de actividades de estudiantes</button>
+    </nav>
+
+    <div class="content">
+      <div class="diagram-box">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="0" y1="0" x2="100" y2="100" stroke="#333" stroke-width="0.3" />
+          <line x1="100" y1="0" x2="0" y2="100" stroke="#333" stroke-width="0.3" />
+        </svg>
+        <span>Diagrama de araña de todos</span>
+      </div>
+
+      <div class="lists">
+        <div class="list-panel">
+          <h2>Estudiantes</h2>
+          <div class="box">
+            <span>Gabriel Valencio</span>
+            <span>Pedro Rodriguez</span>
+            <span class="dots">...</span>
+            <span class="dots">...</span>
+            <span class="dots">...</span>
+            <span class="ver-mas">Ver mas....</span>
+          </div>
+        </div>
+        <div class="list-panel">
+          <h2>Actividades</h2>
+          <div class="box">
+            <span>Item One</span>
+            <span>Item Two</span>
+            <span>Item Three</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
